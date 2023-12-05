@@ -42,22 +42,6 @@ public class GameModel implements ActionListener {
 		players = new ArrayList<Player>();
 		score =0;
 		
-		// e贯穿在目录中的所有项目
-		try{
-			File initial = new File ("save");
-			for (File f:initial.listFiles())
-			{
-				FileInputStream fis = new FileInputStream(f);
-				ObjectInputStream ois = new ObjectInputStream(fis);
-				Player pl = (Player)ois.readObject();
-				players.add(pl);
-			}			
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
 		timer = new Timer(5, this);
 		timer.start();
 		

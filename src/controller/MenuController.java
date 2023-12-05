@@ -202,20 +202,6 @@ public class MenuController implements KeyListener, ActionListener, MouseListene
 				
 				// 更新的鸟类名单
 				ArrayList<Player> players = new ArrayList<Player>();
-				try{
-					File initial = new File ("save");
-					for (File f:initial.listFiles())
-					{
-						FileInputStream fis = new FileInputStream(f);
-						ObjectInputStream ois = new ObjectInputStream(fis);
-						Player pl = (Player)ois.readObject();
-						players.add(pl);
-					}			
-				}
-				catch(Exception e1)
-				{
-					e1.printStackTrace();
-				}
 				angryFrame.setPlayers(players);
 				angryMenuLoadView.setPlayersList(players);
 		        
@@ -239,20 +225,6 @@ public class MenuController implements KeyListener, ActionListener, MouseListene
 			
 			// 更新的名单
 			ArrayList<Player> players = new ArrayList<Player>();
-			try{
-				File initial = new File ("save");
-				for (File f:initial.listFiles())
-				{
-					FileInputStream fis = new FileInputStream(f);
-					ObjectInputStream ois = new ObjectInputStream(fis);
-					Player pl = (Player)ois.readObject();
-					players.add(pl);
-				}			
-			}
-			catch(Exception e1)
-			{
-				e1.printStackTrace();
-			}
 
 			angryFrame.setPlayers(players);
 			angryMenuLoadView.setPlayersList(players);
@@ -266,25 +238,9 @@ public class MenuController implements KeyListener, ActionListener, MouseListene
 				// 删除选中的文件
 				Player p = (Player) playersList.getSelectedItem();
 				playersList.removeItem(p);
-				File file = new File("save/" + p.getName() + ".save"); 
-				file.delete();
 				
 				// 更新的名单
 				ArrayList<Player> players = new ArrayList<Player>();
-				try{
-					File initial = new File ("save");
-					for (File f:initial.listFiles())
-					{
-						FileInputStream fis = new FileInputStream(f);
-						ObjectInputStream ois = new ObjectInputStream(fis);
-						Player pl = (Player)ois.readObject();
-						players.add(pl);
-					}			
-				}
-				catch(Exception e1)
-				{
-					e1.printStackTrace();
-				}
 				
 				angryFrame.setPlayers(players);
 				angryMenuLoadView.setPlayersList(players);

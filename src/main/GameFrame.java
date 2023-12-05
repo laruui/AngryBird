@@ -37,10 +37,7 @@ public class GameFrame extends JFrame {
 	
 	public GameFrame(String name) {
 		winName = name;
-		
-		// 创建备份文件
-		File fb = new File("save/"); 
-		fb.mkdir();
+
 		//这里实例化，这个方法是自己写的，去找他的构造方法
 		angryModel = new GameModel();
 		//这里实例化的，实际的内容在这里说明，证明这个e的具体内容是从angryModel里面获得的，接下来看看angryModel里面都有啥
